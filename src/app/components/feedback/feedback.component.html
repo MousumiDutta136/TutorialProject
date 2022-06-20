@@ -1,0 +1,56 @@
+<form [formGroup]="form">
+    <h1> FEEDBACK FORM </h1>
+    <p>Let us know how we are doing. Just fill the form below:</p>
+    <p>
+        <label for="firstname">FIRSTNAME </label>
+        <input type="text" id="firstname" name="firstname" formControlName="firstname">
+      </p>
+     
+     
+      <p>
+        <label for="lastname">LASTNAME </label>
+        <input type="text" id="lastname" name="lastname" formControlName="lastname">
+      </p>
+ 
+    <p>
+      <label for="address">ADDRESS </label>
+      <input type="text" id="address" name="address" formControlName="address">
+    </p>
+   
+   
+    <p>
+      <label for="city">CITY </label>
+      <input type="text" id="city" name="city" formControlName="city">
+    </p>
+  
+    <p *ngIf="form.get('postalcode')?.dirty && 
+    form.errors?.['incorrectPostalCode']"> 
+      Incorrect PostalCode</p>
+      <p> 
+      <label for="postalcode">POSTALCODE </label>
+      <input type="text" id="postalcode" name="postalcode" formControlName="postalcode">
+    </p> 
+    <p>
+      <label for="country">COUNTRY </label>
+      <select id="country" name="country"  formControlName="country">
+       <option value="US" >US</option>
+       <option value="CANADA" >CANADA</option>
+     
+      </select>
+    </p>
+    <p>
+        <label for="email">EMAIL </label>
+        <input type="text" id="email" name="email" formControlName="email">
+      </p>
+      <p>
+        <label for="comments">COMMENTS </label>
+        <input type="text" id="comments" name="comments" formControlName="comments">
+      </p>
+    <p>
+      <button (click)="submit()">Submit</button>
+    </p>
+    <h1> Thank You!</h1>
+    <div>
+      {{form.valid}}
+    </div>
+  </form>

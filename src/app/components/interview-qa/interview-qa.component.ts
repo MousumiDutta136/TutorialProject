@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-interview-qa',
   templateUrl: './interview-qa.component.html',
@@ -9,7 +10,10 @@ export class InterviewQAComponent implements OnInit {
 
   constructor() { }
 
+
+
   ngOnInit(): void {
+
   }
 
 }

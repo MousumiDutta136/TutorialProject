@@ -2,11 +2,12 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CheatsheetComponent } from './components/cheatsheet/cheatsheet.component';
 import { EBooksComponent } from './components/e-books/e-books.component';
-import { EventsComponent } from './components/events/events.component';
+
+import { FeedbackComponent } from './components/feedback/feedback.component';
 import { HomeComponent } from './components/home/home.component';
 import { InterviewQAComponent } from './components/interview-qa/interview-qa.component';
 import { LoginComponent } from './components/login/login.component';
-import { NewsComponent } from './components/news/news.component';
+import { NewseventsComponent } from './components/newsevents/newsevents.component';
 import { QuizComponent } from './components/quiz/quiz.component';
 
 const routes: Routes = [
@@ -15,10 +16,10 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'cheatsheet', component: CheatsheetComponent },
   { path: 'ebooks', component: EBooksComponent },
+  { path: 'newsevents', component: NewseventsComponent },
   { path: 'interviewqa', component: InterviewQAComponent },
-  { path: 'news', component: NewsComponent },
-  { path: 'events', component: EventsComponent },
   { path: 'quiz', component: QuizComponent },
+  { path: 'feedback', component: FeedbackComponent },
   { path: '**', component: HomeComponent }
 ];
 

@@ -1,13 +1,39 @@
-<div>
-    <label for="username">USERNAME </label>
-    <input type="text" id="username" name="username" formControlName="username">
-  </div>
-  
-  <div>
-    <label for="password">PASSWORD </label>
-    <input type="text" id="password" name="password" formControlName="password">
+<h1 align="center">Login Form </h1>
+
+<form [formGroup]="lgForm" > 
+    
+    <div class="mx-auto" style="width: 400px;" >
+        <label class="mx-auto" style="width: 200px;"
+        for="username">USERNAME: 
+        </label>
+
+        <input class="mx-auto" style="width: 300px;" maxlength="15"
+        type="text"  name="username" placeholder="Max: 15 chars ; Only alphabets." 
+        formControlName="username">
+    </div>
+
+    <div class="mx-auto" style="width: 400px;" *ngIf="lgForm.controls['username'].touched || lgForm.controls['username'].dirty">
+        <div style="color: red;" *ngIf="lgForm.controls['username'].errors && lgForm.controls['username'].errors['pattern']" 
+        [ngClass] = "'error'"> Please enter only alphabets(max:15 chars).
+    </div>
+    </div>
+
+      <div class="mx-auto" style="width: 400px;">
+        <label class="mx-auto" style="width: 200px;"  
+        for="password">PASSWORD: 
+        </label>
+        <input class="mx-auto" style="width: 300px;" maxlength="5"
+         type="text" name="password" placeholder="Max: 5 chars ; Only numbers." 
+         formControlName="password">
+      </div>
+     
+      <div class="mx-auto" style="width: 400px;" *ngIf="lgForm.controls['password'].touched || lgForm.controls['password'].dirty">
+        <div style="color: red;" *ngIf="lgForm.controls['password'].errors && lgForm.controls['password'].errors['pattern']" 
+        [ngClass] = "'error'" > Please enter only numbers(max:5 chars).
+    </div>
+</div>
+  <div class="mx-auto" style="width: 150px;">
+    <button  mat-button [routerLink]="['/home']" [disabled]="!lgForm.valid">Submit</button>
   </div>
 
-  <div class="button-container">
-    <button  mat-button [routerLink]="['/home']">Submit</button>
-  </div>
+</form>

@@ -1,1 +1,26 @@
 <h1 align="center">Start the Quiz! </h1>
+<section>
+    <form [formGroup]="myform"   (ngSubmit)="submit(myform.value)" >
+<div *ngFor="let qstn of quizQAList">
+   <div> <label>
+        {{qstn.qtext}}
+    </label>
+</div>
+    <mat-radio-group formControlName="answer"> 
+        <mat-radio-button *ngFor="let option of qstn.options" [value]="option" 
+        (change)="changeValue(option.correctop,qstn.id)">
+            {{option.optext}}&nbsp;&nbsp;&nbsp;
+        
+        </mat-radio-button>
+    </mat-radio-group>
+<br><br>
+</div>
+<br>
+<button mat-button  >Submit</button><br><br>
+<div>
+    <p>total score: {{ chkFinalScore() }}</p>
+  <p>myForm value: {{ myform.value | json }}</p>
+</div>
+</form>
+
+</section>

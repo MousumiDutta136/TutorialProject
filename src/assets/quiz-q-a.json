@@ -1,0 +1,128 @@
+{
+    "questions": 
+    [
+        {
+            "id":1,
+            "qtext":"1. which of the following is built-in attribute directive?",
+            "options":
+                [
+                    
+                    {
+                        
+                        "optext":"NgIf",
+                        "correctop": false
+                    },
+                    {
+                        
+                        "optext":"NgFor",
+                        "correctop": false
+                    },
+                    {
+                        
+                        "optext":"NgSwitch",
+                        "correctop": false
+                    },
+                    {
+                        
+                        "optext":"NgModel",
+                        "correctop": true
+                    }
+                ]
+        },
+        {
+            "id":2,
+            "qtext":"2. which of the following is built-in structural directive?",
+            "options":
+                [
+                    
+                    {
+                        
+                        "optext":"NgClass",
+                        "correctop": false
+                    },
+                    {
+                        
+                        "optext":"NgStyle",
+                        "correctop": false
+                    },
+                    {
+                        
+                        "optext":"NgModel",
+                        "correctop": false
+                    },
+                    {
+                        
+                        "optext":"NgFor",
+                        "correctop": true
+                    }
+                ]
+        },
+        {
+            "id":3,
+            "qtext":"3. Which of the following is correct syntax for text interpolation?",
+            "options":
+                [
+                    
+                    {
+                        
+                        "optext":"<h3>Current customer: {{ currentCustomer }}</h3>",
+                        "correctop": true
+                    },
+                    {
+                        
+                        "optext":"<h3>Current customer: { currentCustomer }</h3>",
+                        "correctop": false
+                    },
+                    {
+                        
+                        "optext":"<h3>Current customer: [ currentCustomer ]</h3>",
+                        "correctop": false
+                    }
+                    
+                ]
+        },
+        {
+            "id":4,
+            "qtext":"4. <p>The hero's birthday is {{ birthday | date:\"MM/dd/yy\" }} </p> , which of the following built-in pipes is used in the given line of code ?",
+            "options":
+                [
+                    
+                    {
+                        
+                        "optext":"DatePipe",
+                        "correctop": true
+                    },
+                    {
+                        
+                        "optext":"CurrencyPipe",
+                        "correctop": false
+                    },
+                    {
+                        
+                        "optext":"UpperCasePipe",
+                        "correctop": false
+                    }
+                    
+                ]
+        },
+        {
+            "id":5,
+            "qtext":"5. Which decorator is used in a child component or directive signifies the property can receive its value from its parent component ?",
+            "options":
+                [
+                    
+                    {
+                        
+                        "optext":"@Input()",
+                        "correctop": true
+                    },
+                    {
+                        
+                        "optext":"@Output()",
+                        "correctop": false
+                    }
+   
+                ]
+        }
+    ]
+    }	
