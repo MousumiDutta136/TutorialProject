@@ -1,41 +1,33 @@
-.container {
-    padding: 12px 0px 0px 12px;
-    display: flex;
-    background: #004a79;
-    color: white;
-    border-bottom: 3px solid rgba(0,0,0, 0.1);
-}
 
-h1 {
-    font-size: 36px;
-    margin-top: 5px;
-    display: inline;
+.example-spacer {
+   flex: 1 1 auto;
+  }
+span{
     color: black;
-}
-a {
-    padding: 8px;
-    height: 12px;
+    font-size: 20px; 
+    padding-right: 10px; 
     cursor: pointer;
-    text-decoration: none;
-    color:inherit
 }
-
-a:hover {
+h1 {
+    font-size: 30px;
     color: black;
 }
-
-div button {
-    display: block;
-    margin: auto;
-    margin-top: 40px;
-    justify-content: center;
+.material-icons{
+    font-size: 30px; 
+}
+.matbuttons{
+    font-size: 20px;
+    color: rgb(207, 89, 128); 
+}
+span:hover {
+    color: whitesmoke;
 }
 
 button {
-    background-color: rgb(221, 221, 221);
+    background-color: black; 
 }
-    button:hover {
-        background-color: rgb(50, 124, 39);
-    
+button:hover {
+        background-color: grey;   
 }
+
 

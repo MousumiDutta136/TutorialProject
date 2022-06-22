@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
-import { CheatsheetComponent } from './components/cheatsheet/cheatsheet.component';
 import { EBooksComponent } from './components/e-books/e-books.component';
 import { InterviewQAComponent } from './components/interview-qa/interview-qa.component';
 import { QuizComponent } from './components/quiz/quiz.component';
@@ -15,11 +14,16 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatIconModule } from '@angular/material/icon';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatButtonModule} from '@angular/material/button';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FeedbackComponent } from './components/feedback/feedback.component';
-import { NewseventsComponent } from './components/newsevents/newsevents.component';
-
+import { MatCardModule } from '@angular/material/card';
+import { NewsComponent } from './components/news/news.component';
+import { EventsComponent } from './components/events/events.component';
+import { DocsComponent } from './components/docs/docs.component'; 
+import { CommentsDirective } from './directives/comments.directive';
+import { ItemComponent } from './components/item/item.component';
 
 @NgModule({
   declarations: [
@@ -27,12 +31,15 @@ import { NewseventsComponent } from './components/newsevents/newsevents.componen
     NavBarComponent,
     LoginComponent,
     HomeComponent,
-    CheatsheetComponent,
     EBooksComponent,
-    NewseventsComponent,
     InterviewQAComponent,
     QuizComponent,
-    FeedbackComponent
+    FeedbackComponent,
+    NewsComponent,
+    EventsComponent,
+    DocsComponent,
+    CommentsDirective,
+    ItemComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +50,10 @@ import { NewseventsComponent } from './components/newsevents/newsevents.componen
     MatFormFieldModule,
     MatInputModule,
     MatRadioModule,
-    MatIconModule
+    MatIconModule,
+    MatCardModule,
+    MatToolbarModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

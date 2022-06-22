@@ -1,26 +1,23 @@
-<h1 align="center">Start the Quiz! </h1>
+
+<br><h2 align="center"><b> Start the Quiz!</b> </h2>
 <section>
-    <form [formGroup]="myform"   (ngSubmit)="submit(myform.value)" >
-<div *ngFor="let qstn of quizQAList">
-   <div> <label>
-        {{qstn.qtext}}
-    </label>
-</div>
+    <form [formGroup]="myform"   (ngSubmit)="submit(myform.value)" class="container">
+        <table align="center" width="90%"> 
+    <div *ngFor="let qstn of quizQAList">
+        <tr>
+    <div> <label><b>{{qstn.qtext}} </b></label></div>
     <mat-radio-group formControlName="answer"> 
         <mat-radio-button *ngFor="let option of qstn.options" [value]="option" 
         (change)="changeValue(option.correctop,qstn.id)">
             {{option.optext}}&nbsp;&nbsp;&nbsp;
-        
         </mat-radio-button>
-    </mat-radio-group>
-<br><br>
-</div>
+    </mat-radio-group><br><br>
+</tr>
+    </div>
+<tr align="center"><button mat-raised-button color="accent" [disabled]="!myform.valid">Submit</button></tr>
 <br>
-<button mat-button  >Submit</button><br><br>
-<div>
-    <p>total score: {{ chkFinalScore() }}</p>
-  <p>myForm value: {{ myform.value | json }}</p>
-</div>
+<tr align="center">Total Score: {{ chkFinalScore() }}</tr>
+<br>
+</table>
 </form>
-
 </section>

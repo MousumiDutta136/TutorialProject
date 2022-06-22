@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { customValidator } from 'src/app/Validators/validators';
 
 @Component({
@@ -8,26 +8,35 @@ import { customValidator } from 'src/app/Validators/validators';
   styleUrls: ['./feedback.component.css']
 })
 export class FeedbackComponent implements OnInit {
-
-  constructor() { }
-  form!:FormGroup;
-
+   form: FormGroup;
+ public shwText:string  | undefined;
+public flag:boolean=false;
+  emailPattern = "^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$";
   submit(){
     const values=this.form.value;
-    console.log(values);
+    if(this.form.valid){
+      this.flag=true;
+      this.shwText="Successfully submitted the feedback form"
+    }
+    else{
+      this.flag=false;
+    }
+    
   }
+  constructor(fb : FormBuilder) { 
+     this.form= fb.group({
+    firstname : [null, [Validators.required, Validators.pattern("^[a-zA-Z]{1,15}$")]],
+    lastname : [null, [Validators.required, Validators.pattern("^[a-zA-Z]{1,15}$")]],
+    address: [],
+    city: [null, [Validators.required, Validators.pattern("^[a-zA-Z]{1,15}$")]],
+    postalcode: [null,[Validators.required]],
+    country: [],
+    email : [null, [Validators.required, Validators.pattern(this.emailPattern)]],
+    comments : new FormControl()
+  }) }
   ngOnInit(): void{
 
-    this.form=new FormGroup({
-      firstname : new FormControl(),
-      lastname : new FormControl(),
-      address: new FormControl(),
-      city: new FormControl(),
-      postalcode: new FormControl('',[Validators.required]),
-      country: new FormControl(),
-      email : new FormControl(),
-      comments : new FormControl()
-    },customValidator())
+  
   }
 
 }

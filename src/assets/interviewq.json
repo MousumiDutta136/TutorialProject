@@ -1,0 +1,59 @@
+{
+    "questions":[
+    {
+    "qstString":"1.What is Angular?",
+    "ansString":"Angular is an open-source web application development framework created by Google. It is used to build frontend, single-page applications that run on JavaScript. It is a full-fledged framework, i.e., it takes care of many aspects of frontend web applications such as HTTP requests, routing, layout, forms, reactivity, validation, etc."
+
+
+    },
+    {
+    "qstString":"2. What are the technologies used in Angular?",
+    "ansString":"Angular is a modern frontend JavaScript framework developed by Google. Angular itself makes use of several technologies for several reasons to accomplish certain tasks easily as well as to allow developers to have a better experience while developing applications with it. Angular uses TypeScript, which is a superscript of JavaScript. So, any valid JavaScript is a valid TypeScript. However, TypeScript allows us to write JavaScript as a strongly typed language, and we can define our own types as well, which makes catching bugs much easier. It also uses RxJS, which allows developers to better deal with asynchronous operations."
+
+
+    },
+
+    {
+    "qstString":"3. Why were client-side frameworks like Angular introduced?",
+    "ansString":"Before JavaScript-based client-side frameworks, the way dynamic websites worked was by taking a template that is nothing but HTML code with spaces left empty for feeding data and content into those templates. This data was usually fetched from a database. After combining the template and data, we would serve the generated HTML content back to the user. As you can see, it was a bit complicated, and in some cases, it took a lot of processing. To overcome these issues, people came up with another approach in which they send the necessary data to render a page from their web servers to the web browsers and let JavaScript combine this data with a predefined template. Since now, even mobile phones are powerful enough to do this kind of processing, the servers can now just send the data to a client over the internet in a recognizable format, i.e., JSON, XML, etc. This drastically reduces the processing done on the servers and improves performance."
+    },
+
+    {
+    "qstString":"4. What do you mean by data binding?",
+    "ansString":"Data binding is among the most important and powerful features that help in establishing communication between DOM and the component. It makes the defining process of interactive applications simple as you no longer need to panic about data pushing or pulling between the component and the template. There are the four types of data binding in Angular: Event binding, Property binding, String interpolation, Two-way data binding."
+
+    },
+
+    {
+    "qstString":"5. What are the components in Angular?",
+    "ansString":"Components are the basic building block of the user interface in Angular. A component consists of HTML, CSS, and JavaScript for a specific portion of a user interface. We can think of these as a custom HTML element that only Angular can understand. These components are isolated, i.e., styles and code from one component do not affect other components as they get namespaced by the compiler. These components are then pieced together by the Angular framework to build the user interface for the browser to render."
+    },
+
+    {
+        "qstString":"6. What are services in Angular?",
+        "ansString":"A service in Angular is a term that covers broad categories of functionalities. A service is any value, function, or feature that an app needs. A service is typically used to accomplish a very narrow purpose such as HTTP communication, sending data to a cloud service, decoding some text, validating data, etc. A service does one thing and does it well. It is different from a component as it is not concerned with HTML or any other kind of presentation logic. Normally, a component uses multiple services to accomplish multiple tasks."
+    },
+
+    {
+        "qstString":"7. What are lifecycle hooks in Angular?",
+        "ansString":"When building an Angular app, there will be times when we need to execute some code at some specific event—such as when a component is initialized or displayed on the screen or when the component is being removed from the screen. This is what lifecycle hooks are used for. For example, if we have some event listener attached to an HTML element in a component, such as a button click or form submission, we can remove that event listener before removing the component from the screen, just like we can fetch some data and display it on the screen in a component after the component is loaded on the screen. To use a lifecycle hook, we can override some methods on a component, such as ngOnInit or ngAfterViewInit. These methods, if available on a component, will be called by Angular automatically. This is why these are called lifecycle hooks."
+    },
+
+    {
+        "qstString":"8. What are pipes in Angular?",
+        "ansString":"When we are trying to output some dynamic data in our templates, we may sometimes need to manipulate or transform the data before it is put into our templates. Though there are several ways of doing that, in Angular, using pipes is the most preferred way. A pipe is just a simple function, which we can use with expressions in our templates. Pipes are extremely useful as we can use them throughout our application after declaring them just once and registering them with the Angular framework. Some of the most common built-in pipes in Angular are UpperCasePipe, LowerCasePipe, CurrencyPipe, etc."
+    },
+
+    {
+        "qstString":"9. What are observables in Angular?",
+        "ansString":"An observable is a declarative way using which we can perform asynchronous tasks. Observables can be thought of as streams of data flowing from a publisher to a subscriber. They are similar to promises as they both deal with handling asynchronous requests. However, observables are considered to be a better alternative to promises as the former comes with a lot of operators that allow developers to better deal with asynchronous requests, especially if there is more than one request at a time. Observables are preferred by many developers as they allow them to perform multiple operations such as combining two observables, mapping an observable into another observable, and even piping multiple operations through an observable to manipulate its data."
+    },
+
+    {
+        "qstString":"10. What is RxJS?",
+        "ansString":"RxJS is a library, and the term stands for Reactive Extensions for JavaScript. It is used so that we can use observables in our JavaScript project, which enables us to perform reactive programming. RxJS is used in many popular frameworks such as Angular because it allows us to compose our asynchronous operations or callback-based code into a series of operations performed on a stream of data that emits values from a publisher to a subscriber. Other languages such as Java, Python, etc. also have libraries that allow them to write reactive code using observables."
+    }
+
+
+    ]
+}

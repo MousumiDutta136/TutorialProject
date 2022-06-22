@@ -1,0 +1,27 @@
+.columns {
+    padding-inline: 25pt;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-around;
+  }
+  
+  .column {
+    flex: 33.33%;
+    border-color: blue;
+    border-radius: 2px;
+    border: solid;
+    justify-content: space-around;
+    gap: 10px;
+    gap: 10px 20px; /* row-gap column gap */
+    row-gap: 10px;
+    column-gap: 20px;
+    padding-inline: 20px;
+    align-content: center;
+    align-items: center;
+
+    
+    
+  }

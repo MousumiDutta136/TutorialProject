@@ -48,6 +48,7 @@ export class QuizComponent implements OnInit {
         this.scoreArry[qId]=option.toString();
       }
     }
+ 
   }
   chkFinalScore(){
     let count=0;
