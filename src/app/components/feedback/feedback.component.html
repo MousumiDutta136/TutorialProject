@@ -1,135 +1,140 @@
+<mat-card  align="center" >
+  <mat-card-title>
+  <h1><b> Feedback Form </b></h1>
+  </mat-card-title>
+  <mat-card-subtitle>
+  <h3>Let us know how we are doing. Just fill the form below:</h3>
+  </mat-card-subtitle>
+  <mat-card-content >
+  <form [formGroup]="form" autocomplete="off">
+    <table align="center" border = "1" width="70%"> 
+       <!-- First name -->
+      <tr>
+        <td><b> <label  for="firstname">FIRSTNAME : </label></b></td>
+        <td><mat-form-field class="demo-full-width"> 
+        <input type="text" class="form-control" formControlName="firstname" 
+        style="width: 500px;height:50px" placeholder="Max 15 chars; Only letters."
+        [class.is-invalid]="(form.get('firstname')?.touched || form.get('firstname')?.dirty) 
+        && form.get('firstname')?.invalid">
+        <!-- error block -->
+        <div class="invalid-feedback" 
+        *ngIf="(form.get('firstname')?.touched || form.get('firstname')?.dirty) && form.get('firstname')?.invalid">
+          <sup>*</sup>Please enter valid firstname.
+        </div>
+        </mat-form-field></td>
+    </tr>
 
-  <mat-card  align="center" >
-    <mat-card-title>
-    <h1 > Feedback Form </h1>
-    </mat-card-title>
-    <mat-card-subtitle>
-    <h3>Let us know how we are doing. Just fill the form below:</h3>
-    </mat-card-subtitle>
-    <mat-card-content >
-    <form [formGroup]="form" autocomplete="off">
-      <table align="center" border = "1" width="70%"> 
-        <tr>
-          <td> <label  for="firstname">FIRSTNAME : </label></td>
-          <td>  <mat-form-field class="demo-full-width"> 
-            <input autocomplete="off"  type="text" id="firstname" name="firstname" formControlName="firstname" style="width: 500px;height:50px">
-          </mat-form-field></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td ><mat-form-field class="demo-full-width" *ngIf="(!form.controls['firstname'].valid || 
-            form.controls['firstname'].dirty) && 
-            (form.controls['firstname'].errors && form.controls['firstname'].errors['pattern'])"
-            style="color:red" > Please enter valid Firstname.</mat-form-field>
-          </td>
-        </tr>
-        <tr>
-          <td><label for="lastname">LASTNAME : </label></td>
-          <td>   <mat-form-field class="demo-full-width">
-            <input   type="text" id="lastname" name="lastname" formControlName="lastname" style="width: 500px;height:50px">
-          </mat-form-field>  </td>
-        </tr>
-     
-        <tr>
-          <td></td>
-          <td ><mat-form-field class="demo-full-width" *ngIf="(!form.controls['lastname'].valid || 
-            form.controls['lastname'].dirty) && 
-            (form.controls['lastname'].errors && form.controls['lastname'].errors['pattern'])"
-            style="color:red" > Please enter valid Lastname.</mat-form-field>
-          </td>
-        </tr>
- <tr>
-  <td>
-    <label  for="address">ADDRESS : </label>
-  </td>
-  <td> <mat-form-field class="demo-full-width"> 
-    <input  type="text" id="address" name="address" formControlName="address" style="width: 500px;height:50px">
-  </mat-form-field>  </td>
- </tr>
- <tr>
-  <td></td>
-  <td ><mat-form-field class="demo-full-width" *ngIf="(!form.controls['lastname'].valid || 
-    form.controls['address'].dirty) && 
-    (form.controls['address'].errors && form.controls['address'].errors['pattern'])"
-    style="color:red" > Please enter valid Lastname.</mat-form-field>
-  </td>
-</tr>
+   <!-- Last name -->
    <tr>
-    <td> <label for="city">CITY : </label></td>
-    <td>  <mat-form-field class="demo-full-width"> 
-      <input type="text" id="city" name="city" formControlName="city" style="width: 500px;height:50px">
-    </mat-form-field>  </td>
-   </tr>
-   <tr>
-    <td></td>
-    <td ><mat-form-field class="demo-full-width" *ngIf="(!form.controls['city'].valid || 
-      form.controls['city'].dirty) && 
-      (form.controls['city'].errors && form.controls['city'].errors['pattern'])"
-      style="color:red" > Please enter valid Lastname.</mat-form-field>
-    </td>
-  </tr>
-   <tr>
-    <td>
-      <label for="country">COUNTRY : </label>
-    </td>
-    <td>
-      <mat-form-field class="demo-full-width">
-        <select id="country" name="country"  formControlName="country" style="width: 500px;height:50px">
-         <option value="US" >US</option>
-         <option value="CANADA" >CANADA</option>
-       
-        </select>
-      </mat-form-field>  
-    </td>
-  </tr>  
-   <tr>
-    <td>  <label for="postalcode">POSTALCODE : </label></td>
-    <td>  <mat-form-field class="demo-full-width">
-      <input type="text" id="postalcode" name="postalcode" formControlName="postalcode" maxlength="7" style="width: 500px;height:50px">
-    </mat-form-field>  </td>
-   </tr>
-
-
-   
-    
-<tr>
-  <td>
-    <label for="email">EMAIL : </label>
-  </td>
-  <td>    <mat-form-field class="demo-full-width">
-    <input type="text" id="email" name="email" formControlName="email" style="width: 500px;height:50px">
-  </mat-form-field> </td>
-</tr>
-<tr>
-  <td></td>
-  <td ><mat-form-field class="demo-full-width" *ngIf="(!form.controls['email'].valid || form.controls['email'].dirty) && (form.controls['email'].errors && form.controls['email'].errors['pattern'])"
-    style="color:red" > Please enter valid Email.</mat-form-field>
-  </td>
-</tr>
-<tr>
-  <td>
-    <label for="comments">COMMENTS : </label>
-  </td>
-  <td>      <mat-form-field class="demo-full-width">
-    <input appComments type="text" id="comments" name="comments" formControlName="comments" style="width: 500px;height:50px">
-  </mat-form-field>  </td>
-</tr>
-
-
-      </table>
-      <mat-card-actions>
-        <button mat-raised-button color="accent"  (click)="submit()">Submit</button><br><br>
-       
-      </mat-card-actions>
-    
-    </form>
-    </mat-card-content>
-    <div *ngIf="flag==true" style="color:green">
-      {{shwText}}
+    <td><b> <label  for="lastname">LASTNAME : </label></b></td>
+    <td><mat-form-field class="demo-full-width"> 
+    <input type="text" class="form-control" formControlName="lastname" 
+    style="width: 500px;height:50px" placeholder="Max 15 chars; Only letters."
+    [class.is-invalid]="(form.get('lastname')?.touched || form.get('lastname')?.dirty) 
+    && form.get('lastname')?.invalid">
+    <!-- error block -->
+    <div class="invalid-feedback" 
+    *ngIf="(form.get('lastname')?.touched || form.get('lastname')?.dirty) && form.get('lastname')?.invalid">
+      <sup>*</sup>Please enter valid lastname.
     </div>
+    </mat-form-field></td>
+</tr>
 
-    <h1> Thank You!</h1>
-{{form.valid}}
-  
-  </mat-card>
+   <!-- Address -->
+   <tr>
+    <td><b> <label  for="address">ADDRESS : </label></b></td>
+    <td><mat-form-field class="demo-full-width"> 
+    <input type="text" class="form-control" formControlName="address" style="width: 500px;height:50px"
+    [class.is-invalid]="(form.get('address')?.touched || form.get('address')?.dirty) 
+    && form.get('address')?.invalid">
+    <!-- error block -->
+    <div class="invalid-feedback" 
+    *ngIf="(form.get('address')?.touched || form.get('address')?.dirty) && form.get('address')?.invalid">
+      <sup>*</sup>Please enter valid address.
+    </div>
+    </mat-form-field></td>
+</tr>
+
+ <!-- City -->
+ <tr>
+  <td><b> <label  for="city">CITY : </label></b></td>
+  <td><mat-form-field class="demo-full-width"> 
+  <input type="text" class="form-control" formControlName="city" style="width: 500px;height:50px"
+  [class.is-invalid]="(form.get('city')?.touched || form.get('city')?.dirty) 
+  && form.get('city')?.invalid">
+  <!-- error block -->
+  <div class="invalid-feedback" 
+  *ngIf="(form.get('city')?.touched || form.get('city')?.dirty) && form.get('city')?.invalid">
+    <sup>*</sup>Please enter valid city name.
+  </div>
+  </mat-form-field></td>
+</tr>
+ <!-- Country -->
+ <tr>
+  <td> <b><label  for="country">COUNTRY : </label> </b></td>
+  <td><mat-form-field class="demo-full-width"> 
+  <input type="text" class="form-control" formControlName="country" style="width: 500px;height:50px"
+  [class.is-invalid]="(form.get('country')?.touched || form.get('country')?.dirty) 
+  && form.get('country')?.invalid">
+  <!-- error block -->
+  <div class="invalid-feedback" 
+  *ngIf="(form.get('country')?.touched || form.get('country')?.dirty) && form.get('country')?.invalid">
+    <sup>*</sup>Please enter valid country name.
+  </div>
+  </mat-form-field></td>
+</tr>
+<!-- Email -->
+<tr>
+  <td><b> <label  for="email">EMAIL : </label></b></td>
+  <td><mat-form-field class="demo-full-width"> 
+  <input type="text" class="form-control" formControlName="email" 
+  style="width: 500px;height:50px" placeholder="eg., abc@gmail.com."
+  [class.is-invalid]="(form.get('email')?.touched || form.get('email')?.dirty) 
+  && form.get('email')?.invalid">
+  <!-- error block -->
+  <div class="invalid-feedback" 
+  *ngIf="(form.get('email')?.touched || form.get('email')?.dirty) && form.get('email')?.invalid">
+    <sup>*</sup>Please enter valid email id.
+  </div>
+  </mat-form-field></td>
+</tr>
+<!-- Phone -->
+<tr>
+  <td><b> <label  for="phone">PHONE : </label></b></td>
+  <td><mat-form-field class="demo-full-width"> 
+  <input type="text" class="form-control" formControlName="phone" 
+  style="width: 500px;height:50px" placeholder="Must be there 10 digits."
+  [class.is-invalid]="(form.get('phone')?.touched || form.get('phone')?.dirty) 
+  && form.get('phone')?.invalid">
+  <!-- error block -->
+  <div class="invalid-feedback" 
+  *ngIf="(form.get('phone')?.touched || form.get('phone')?.dirty) && form.get('phone')?.invalid">
+    <sup>*</sup>Please enter valid phone number.
+  </div>
+  </mat-form-field></td>
+</tr>
+<!-- Comments -->
+<tr>
+  <td><b> <label  for="comments">COMMENTS : </label></b></td>
+  <td><mat-form-field class="demo-full-width"> 
+  <input type="text" class="form-control" formControlName="comments" 
+  placeholder="Max 20 chars;" style="width: 500px;height:50px"
+  appComments>
+  </mat-form-field></td>
+</tr>
+
+</table>
+<mat-card-actions>
+  <button mat-raised-button color="accent"  (click)="submit()">Submit</button><br>
  
+</mat-card-actions>
+
+</form>
+</mat-card-content>
+<div *ngIf="flag==true" style="color:green">
+{{shwText}}
+</div>
+<br>
+<h1> Thank You!</h1>
+<br>
+</mat-card>

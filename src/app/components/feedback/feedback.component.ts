@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { customValidator } from 'src/app/Validators/validators';
+import {FormBuilder, FormGroup,} from "@angular/forms";
+import { ValidateCity, ValidateCountry, ValidateEmail, ValidateFN, ValidateLN, ValidatePhone } from 'src/app/validators/feedbackValidators';
 
 @Component({
   selector: 'app-feedback',
@@ -8,35 +8,33 @@ import { customValidator } from 'src/app/Validators/validators';
   styleUrls: ['./feedback.component.css']
 })
 export class FeedbackComponent implements OnInit {
-   form: FormGroup;
- public shwText:string  | undefined;
-public flag:boolean=false;
-  emailPattern = "^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$";
-  submit(){
-    const values=this.form.value;
-    if(this.form.valid){
-      this.flag=true;
-      this.shwText="Successfully submitted the feedback form"
-    }
-    else{
-      this.flag=false;
+    form!: FormGroup;
+    public shwText:string  | undefined;
+    public flag:boolean=false;
+
+  constructor(public fb: FormBuilder) { }
+
+     ngOnInit(): void{
+      this.form=this.fb.group({
+        firstname: ['', [ValidateFN]],
+        lastname: ['', [ValidateLN]],
+        address: [''],
+        city: ['', [ValidateCity]],
+        country: ['', [ValidateCountry]],
+        email: ['', [ValidateEmail]],
+        phone: ['', [ValidatePhone]],
+        comments: [''],
+      });
     }
     
-  }
-  constructor(fb : FormBuilder) { 
-     this.form= fb.group({
-    firstname : [null, [Validators.required, Validators.pattern("^[a-zA-Z]{1,15}$")]],
-    lastname : [null, [Validators.required, Validators.pattern("^[a-zA-Z]{1,15}$")]],
-    address: [],
-    city: [null, [Validators.required, Validators.pattern("^[a-zA-Z]{1,15}$")]],
-    postalcode: [null,[Validators.required]],
-    country: [],
-    email : [null, [Validators.required, Validators.pattern(this.emailPattern)]],
-    comments : new FormControl()
-  }) }
-  ngOnInit(): void{
-
-  
-  }
-
+    submit(){
+      const values=this.form.value;
+      if(this.form.valid){
+        this.flag=true;
+        this.shwText="Successfully submitted the feedback form."
+      }
+      else{
+        this.flag=false;
+      } 
+    }
 }

@@ -5,7 +5,7 @@ import { Directive, ElementRef, HostListener, Input, OnInit, Renderer2 } from '@
 })
 export class CommentsDirective {
 
-  @Input() maxChars=10;
+  @Input() maxChars=20;
   @HostListener('input') onKeyUp(){
 
     const  value:string =this.el.nativeElement.value;

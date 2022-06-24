@@ -15,6 +15,8 @@ export class QuizComponent implements OnInit {
   public scoreArry =new Array();
  public scoreSet=new Set();
   myform: FormGroup;
+  public shwText:string  | undefined;
+  public flag:boolean=false;
  
   constructor(private quizQAservc : QuizQustAnsService,fb: FormBuilder) {
     this.myform = fb.group({ 
@@ -62,9 +64,15 @@ export class QuizComponent implements OnInit {
     return count;
   }
   submit(frm : NgForm){
-    console.log(
-     'yes'
-    );
+ 
+    if(frm.valid){
+      this.flag=true;
+      this.shwText="Successfully submitted the feedback form."
+    }
+    else{
+      this.flag=false;
+      
+    } 
   }
 
 }

@@ -1,5 +1,5 @@
 
-<br><h2 align="center"><b> Start the Quiz!</b> </h2>
+<br><h1 align="center"><b> Start the Quiz!</b> </h1>
 <section>
     <form [formGroup]="myform"   (ngSubmit)="submit(myform.value)" class="container">
         <table align="center" width="90%"> 
@@ -14,10 +14,13 @@
     </mat-radio-group><br><br>
 </tr>
     </div>
-<tr align="center"><button mat-raised-button color="accent" [disabled]="!myform.valid">Submit</button></tr>
+<tr align="center"><button mat-raised-button color="accent" (click)="submit(myform.value)">Submit</button></tr>
 <br>
-<tr align="center">Total Score: {{ chkFinalScore() }}</tr>
+<tr align="center"><b>Total Score: {{ chkFinalScore() }}</b></tr>
 <br>
 </table>
 </form>
+<div *ngIf="flag==true" style="color:green">
+    {{shwText}}
+    </div>
 </section>

@@ -126,7 +126,7 @@
         },
         {
             "id":6,
-            "qtext":"6. Subject in RxJS is a special hybrid that can act as both an observable and an observer at the same time?",
+            "qtext":"6. Subject in RxJS is a special hybrid that can act as both an observable and an observer at the same time.",
             "options":
                 [
                     
@@ -145,51 +145,42 @@
         },
         {
             "id":7,
-            "qtext":"7. which of the following is built-in structural directive?",
+            "qtext":"7.To lazy load Angular modules, which of the following is used to configure in routes?",
             "options":
                 [
                     
                     {
                         
-                        "optext":"NgClass",
+                        "optext":"path",
                         "correctop": false
                     },
                     {
                         
-                        "optext":"NgStyle",
+                        "optext":"component",
                         "correctop": false
                     },
                     {
                         
-                        "optext":"NgModel",
-                        "correctop": false
-                    },
-                    {
-                        
-                        "optext":"NgFor",
+                        "optext":"loadchildren",
                         "correctop": true
                     }
+                    
                 ]
         },
         {
             "id":8,
-            "qtext":"8. Which of the following is correct syntax for text interpolation?",
+            "qtext":"8. Which of the following is the correct template variable from this code snippet <input #phone placeholder=\"phone number\"/>?",
             "options":
                 [
                     
                     {
                         
-                        "optext":"<h3>Current customer: {{ currentCustomer }}</h3>",
+                        "optext":"#phone",
                         "correctop": true
                     },
                     {
                         
-                        "optext":"<h3>Current customer: { currentCustomer }</h3>",
-                        "correctop": false
-                    },
-                    {
-                        
-                        "optext":"<h3>Current customer: [ currentCustomer ]</h3>",
+                        "optext":"\"phone number\"",
                         "correctop": false
                     }
                     
@@ -197,23 +188,18 @@
         },
         {
             "id":9,
-            "qtext":"9. <p>The hero's birthday is {{ birthday | date:\"MM/dd/yy\" }} </p> , which of the following built-in pipes is used in the given line of code ?",
+            "qtext":"9. Promises are not cancellable?",
             "options":
                 [
                     
                     {
                         
-                        "optext":"DatePipe",
+                        "optext":"True",
                         "correctop": true
                     },
                     {
                         
-                        "optext":"CurrencyPipe",
-                        "correctop": false
-                    },
-                    {
-                        
-                        "optext":"UpperCasePipe",
+                        "optext":"False",
                         "correctop": false
                     }
                     
@@ -221,19 +207,19 @@
         },
         {
             "id":10,
-            "qtext":"10. Which decorator is used in a child component or directive signifies the property can receive its value from its parent component ?",
+            "qtext":"10. Angular provides which of the following  pipe that you can use to subscribe to observables and promises directly in your components' templates without the need to call the subscribe() method in the components' code? ",
             "options":
                 [
                     
                     {
                         
-                        "optext":"@Input()",
-                        "correctop": true
+                        "optext":"sync",
+                        "correctop": false
                     },
                     {
                         
-                        "optext":"@Output()",
-                        "correctop": false
+                        "optext":"async",
+                        "correctop": true
                     }
    
                 ]

@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
@@ -24,6 +23,9 @@ import { EventsComponent } from './components/events/events.component';
 import { DocsComponent } from './components/docs/docs.component'; 
 import { CommentsDirective } from './directives/comments.directive';
 import { ItemComponent } from './components/item/item.component';
+import { SidePanelComponent } from './components/side-panel/side-panel.component';
+import { DocContentComponent } from './components/doc-content/doc-content.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,9 @@ import { ItemComponent } from './components/item/item.component';
     EventsComponent,
     DocsComponent,
     CommentsDirective,
-    ItemComponent
+    ItemComponent,
+    SidePanelComponent,
+    DocContentComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +57,8 @@ import { ItemComponent } from './components/item/item.component';
     MatIconModule,
     MatCardModule,
     MatToolbarModule,
-    MatButtonModule
+    MatButtonModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

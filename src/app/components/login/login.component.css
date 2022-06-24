@@ -1,0 +1,12 @@
+mat-card{
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+  }
+  .demo-full-width{
+    width:100%;
+   
+}
+.alert{
+    color: red;
+}

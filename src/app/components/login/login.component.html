@@ -1,1 +1,51 @@
-<h3 align="center"> Page Under Construction</h3>
+
+<mat-card  align="center" >
+  <mat-card-title>
+    <h1><b>Login</b></h1>
+    </mat-card-title>
+
+    <mat-card-content >
+      <form  [formGroup]="lgForm" autocomplete="off">
+        <table align="center" border = "1" width="40%"> 
+          <tr>
+            <td> <label  for="username"><b>USERNAME : </b> </label></td>
+            <td>  <mat-form-field class="demo-full-width"> 
+              <input #inputName autocomplete="off"  type="text" id="username" name="username" 
+              placeholder="Max:15 chars; Only letters." maxlength="15"
+              formControlName="username" style="width: 300px;height:50px"
+               [class.is-invalid]="lgForm.controls['username'].invalid
+               && (lgForm.controls['username'].dirty || lgForm.controls['username'].touched)">
+              <div class="invalid-feedback" *ngIf="lgForm.controls['username'].errors && lgForm.controls['username'].errors['pattern']">
+              Please enter valid username.
+            </div>
+          </mat-form-field></td>
+          </tr>
+          <tr>
+            <td> <label  for="password"><b>PASSWORD : </b> </label></td>
+            <td>  <mat-form-field class="demo-full-width"> 
+              <input #inputName autocomplete="off"  type="text" id="password" name="password" 
+              placeholder="Max:15 chars; Only numbers." maxlength="15"
+              formControlName="password" style="width: 300px;height:50px"
+               [class.is-invalid]="lgForm.controls['password'].invalid
+               && (lgForm.controls['password'].dirty || lgForm.controls['password'].touched)">
+              <div class="invalid-feedback" *ngIf="lgForm.controls['password'].errors && lgForm.controls['password'].errors['pattern']">
+              Please enter valid password.
+            </div>
+          </mat-form-field></td>
+          </tr>
+
+          </table>
+          <br>
+        </form>
+          <mat-card-actions>
+            <button mat-raised-button color="accent" (click)="onClick(inputName.value)" 
+         
+            
+            routerLink="/home"><b>GO</b></button><br><br>
+           
+          </mat-card-actions>
+       
+         
+    </mat-card-content>
+
+</mat-card>

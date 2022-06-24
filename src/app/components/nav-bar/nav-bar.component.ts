@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { WelcomeUserService } from 'src/app/services/welcome-user.service';
 
 @Component({
   selector: 'app-nav-bar',
@@ -7,9 +8,13 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class NavBarComponent implements OnInit {
 @Input() title='';
-  constructor() { }
-
+guest:String="Sara";
+  constructor(private welcmServc:WelcomeUserService) { }
+ 
   ngOnInit(): void {
+    this.welcmServc.name.subscribe(data=>{
+      this.guest = data;
+    });
   }
-
+ 
 }
